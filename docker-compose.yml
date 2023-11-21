@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  ngx-portal:
+    image: jamescurtisfoxmail/ngx-portal
+    environment:
+      - svg2bitmapHost=svg2bitmap:3000
+      - ngxRenderHost=ngx-render:4000
+    ports:
+      - "80:3001"
+  ngx-render:
+    image: jamescurtisfoxmail/ngx-render
+  svg2bitmap:
+    image: jamescurtisfoxmail/svg2bitmap
