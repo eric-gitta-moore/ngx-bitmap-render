@@ -1,5 +1,11 @@
 # ngx-bitmap-render
 
+## quickstart
+```shell
+docker compose up -d
+```
+
+## docs
 api:
 
 ```ts
