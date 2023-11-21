@@ -1,0 +1,9 @@
+[submodule "svg2bitmap"]
+	path = svg2bitmap
+	url = https://github.com/james-curtis/svg2bitmap.git
+[submodule "ngx-render"]
+	path = ngx-render
+	url = https://github.com/james-curtis/ngx-render.git
+[submodule "ngx-portal"]
+	path = ngx-portal
+	url = https://github.com/james-curtis/ngx-portal.git
