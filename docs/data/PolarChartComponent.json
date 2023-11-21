@@ -1,0 +1,145 @@
+{
+  "type": "PolarChartComponent",
+  "externalCSS": "",
+  "ngxOptions": {
+    "results": [
+      {
+        "name": "Niger",
+        "series": [
+          {
+            "value": 6958,
+            "name": "2016-09-14T07:27:31.291Z"
+          },
+          {
+            "value": 6384,
+            "name": "2016-09-17T22:08:06.961Z"
+          },
+          {
+            "value": 2802,
+            "name": "2016-09-14T01:55:06.826Z"
+          },
+          {
+            "value": 5518,
+            "name": "2016-09-21T09:46:44.972Z"
+          },
+          {
+            "value": 4638,
+            "name": "2016-09-21T06:36:17.715Z"
+          }
+        ]
+      },
+      {
+        "name": "Falkland Islands (Malvinas)",
+        "series": [
+          {
+            "value": 4957,
+            "name": "2016-09-14T07:27:31.291Z"
+          },
+          {
+            "value": 2890,
+            "name": "2016-09-17T22:08:06.961Z"
+          },
+          {
+            "value": 5050,
+            "name": "2016-09-14T01:55:06.826Z"
+          },
+          {
+            "value": 5956,
+            "name": "2016-09-21T09:46:44.972Z"
+          },
+          {
+            "value": 6225,
+            "name": "2016-09-21T06:36:17.715Z"
+          }
+        ]
+      },
+      {
+        "name": "Dominica",
+        "series": [
+          {
+            "value": 4123,
+            "name": "2016-09-14T07:27:31.291Z"
+          },
+          {
+            "value": 2466,
+            "name": "2016-09-17T22:08:06.961Z"
+          },
+          {
+            "value": 6452,
+            "name": "2016-09-14T01:55:06.826Z"
+          },
+          {
+            "value": 4348,
+            "name": "2016-09-21T09:46:44.972Z"
+          },
+          {
+            "value": 4085,
+            "name": "2016-09-21T06:36:17.715Z"
+          }
+        ]
+      },
+      {
+        "name": "Iraq",
+        "series": [
+          {
+            "value": 3252,
+            "name": "2016-09-14T07:27:31.291Z"
+          },
+          {
+            "value": 3073,
+            "name": "2016-09-17T22:08:06.961Z"
+          },
+          {
+            "value": 3035,
+            "name": "2016-09-14T01:55:06.826Z"
+          },
+          {
+            "value": 2231,
+            "name": "2016-09-21T09:46:44.972Z"
+          },
+          {
+            "value": 2751,
+            "name": "2016-09-21T06:36:17.715Z"
+          }
+        ]
+      },
+      {
+        "name": "Cuba",
+        "series": [
+          {
+            "value": 4992,
+            "name": "2016-09-14T07:27:31.291Z"
+          },
+          {
+            "value": 6730,
+            "name": "2016-09-17T22:08:06.961Z"
+          },
+          {
+            "value": 3152,
+            "name": "2016-09-14T01:55:06.826Z"
+          },
+          {
+            "value": 4460,
+            "name": "2016-09-21T09:46:44.972Z"
+          },
+          {
+            "value": 4259,
+            "name": "2016-09-21T06:36:17.715Z"
+          }
+        ]
+      }
+    ],
+    "showGridLines": false,
+    "showXAxisLabel": true,
+    "showYAxisLabel": true,
+    "xAxisLabel": "Census Date",
+    "yAxisLabel": "GDP Per Capita",
+    "xAxis": true,
+    "yAxis": true,
+    "legend": true,
+    "view": [
+      700,
+      300
+    ]
+  }
+}
