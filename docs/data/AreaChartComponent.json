@@ -1,0 +1,145 @@
+{
+  "type": "AreaChartComponent",
+  "externalCSS": "",
+  "ngxOptions": {
+    "results": [
+      {
+        "name": "Somalia",
+        "series": [
+          {
+            "value": 3107,
+            "name": "2016-09-16T18:50:19.795Z"
+          },
+          {
+            "value": 6289,
+            "name": "2016-09-22T13:42:28.836Z"
+          },
+          {
+            "value": 6816,
+            "name": "2016-09-18T16:26:56.486Z"
+          },
+          {
+            "value": 3033,
+            "name": "2016-09-23T10:02:47.388Z"
+          },
+          {
+            "value": 5991,
+            "name": "2016-09-22T09:43:18.364Z"
+          }
+        ]
+      },
+      {
+        "name": "Japan",
+        "series": [
+          {
+            "value": 4465,
+            "name": "2016-09-16T18:50:19.795Z"
+          },
+          {
+            "value": 4431,
+            "name": "2016-09-22T13:42:28.836Z"
+          },
+          {
+            "value": 4823,
+            "name": "2016-09-18T16:26:56.486Z"
+          },
+          {
+            "value": 5686,
+            "name": "2016-09-23T10:02:47.388Z"
+          },
+          {
+            "value": 5497,
+            "name": "2016-09-22T09:43:18.364Z"
+          }
+        ]
+      },
+      {
+        "name": "Chad",
+        "series": [
+          {
+            "value": 4360,
+            "name": "2016-09-16T18:50:19.795Z"
+          },
+          {
+            "value": 2404,
+            "name": "2016-09-22T13:42:28.836Z"
+          },
+          {
+            "value": 5288,
+            "name": "2016-09-18T16:26:56.486Z"
+          },
+          {
+            "value": 5369,
+            "name": "2016-09-23T10:02:47.388Z"
+          },
+          {
+            "value": 3063,
+            "name": "2016-09-22T09:43:18.364Z"
+          }
+        ]
+      },
+      {
+        "name": "Palestinian Territory",
+        "series": [
+          {
+            "value": 6978,
+            "name": "2016-09-16T18:50:19.795Z"
+          },
+          {
+            "value": 2615,
+            "name": "2016-09-22T13:42:28.836Z"
+          },
+          {
+            "value": 2464,
+            "name": "2016-09-18T16:26:56.486Z"
+          },
+          {
+            "value": 3720,
+            "name": "2016-09-23T10:02:47.388Z"
+          },
+          {
+            "value": 3593,
+            "name": "2016-09-22T09:43:18.364Z"
+          }
+        ]
+      },
+      {
+        "name": "South Africa",
+        "series": [
+          {
+            "value": 5377,
+            "name": "2016-09-16T18:50:19.795Z"
+          },
+          {
+            "value": 6554,
+            "name": "2016-09-22T13:42:28.836Z"
+          },
+          {
+            "value": 3306,
+            "name": "2016-09-18T16:26:56.486Z"
+          },
+          {
+            "value": 2251,
+            "name": "2016-09-23T10:02:47.388Z"
+          },
+          {
+            "value": 3627,
+            "name": "2016-09-22T09:43:18.364Z"
+          }
+        ]
+      }
+    ],
+    "showGridLines": false,
+    "showXAxisLabel": true,
+    "showYAxisLabel": true,
+    "xAxisLabel": "Census Date",
+    "yAxisLabel": "GDP Per Capita",
+    "xAxis": true,
+    "yAxis": true,
+    "legend": true,
+    "view": [
+      700,
+      300
+    ]
+  }
+}
