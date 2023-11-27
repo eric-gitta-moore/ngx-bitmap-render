@@ -1,149 +1,149 @@
 #### healthycheck
-GET http://localhost/
+GET http://{{ngx-portal}}/
 
 
 #### e.g. AdvancedPieChartComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/AdvancedPieChartComponent.json
 
 
 ### e.g. AreaChartComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/AreaChartComponent.json
 
 
 ### e.g. AreaChartNormalizedComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/AreaChartNormalizedComponent.json
 
 
 ### e.g. AreaChartStackedComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/AreaChartStackedComponent.json
 
 
 #### e.g. BarHorizontalComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BarHorizontalComponent.json
 
 
 #### e.g. BarHorizontalNormalizedComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BarHorizontalNormalizedComponent.json
 
 
 #### e.g. BarHorizontalStackedComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BarHorizontalStackedComponent.json
 
 
 #### e.g. BarVerticalComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BarVerticalComponent.json
 
 
 #### e.g. BarVerticalNormalizedComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BarVerticalNormalizedComponent.json
 
 
 #### e.g. BarVerticalStackedComponent >> bug
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BarVerticalStackedComponent.json
 
 
 ### e.g. BoxChartComponent >> bug
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BoxChartComponent.json
 
 
 ### e.g. BubbleChartComponent >> bug
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/BubbleChartComponent.json
 
 
 ### e.g. GaugeComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/GaugeComponent.json
 
 
 ### e.g. HeatMapComponent >> bug
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/HeatMapComponent.json
 
 
 ### e.g. LineChartComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/LineChartComponent.json
 
 
 ### e.g. LineChartComponent with Basis curve and autoScale
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/LineChartComponent-basis-curve.json
 
 
 ### e.g. NumberCardComponent >> bug
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/NumberCardComponent.json
 
 
 ### e.g. PieChartComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/PieChartComponent.json
 
 
 ### e.g. PieGridComponent
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/PieGridComponent.json
 
 
 ### e.g. PolarChartComponent >> bug
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/PolarChartComponent.json
 
 
 ### e.g. TreeMapComponent >> bug
-POST http://localhost/portal
+POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 
 < ./data/TreeMapComponent.json

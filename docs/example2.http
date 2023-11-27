@@ -1,0 +1,27 @@
+### response without group by
+POST http://{{ngx-portal}}/parse
+Content-Type: application/json
+
+< ./data2/response-without-group-by.json
+
+
+### response with one group by
+< {%
+    request.variables.set('type', 'PieChartComponent')
+    request.variables.set('type', 'BarVerticalComponent')
+%}
+POST http://{{ngx-portal}}/parse
+Content-Type: application/json
+
+< ./data2/response-with-one-group-by.json
+
+
+### response with two group by
+< {%
+    request.variables.set('type', 'BarVerticalComponent')
+%}
+POST http://{{ngx-portal}}/parse
+Content-Type: application/json
+
+< ./data2/response-with-two-group-by.json
+
