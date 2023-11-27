@@ -1,4 +1,5 @@
 {
+  "seriesType": "MultiSeries",
   "chartParam": {
     "type": "{{type}}",
     "externalCSS": "",
