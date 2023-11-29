@@ -1,17 +1,14 @@
 # 直接把 skydata 数据原样传到 /parse 接口也是可以识别的
 
 ### response without group by
-POST http://{{ngx-portal}}/parse?debug=1
-#POST http://{{ngx-portal}}/parse
+#POST http://{{ngx-portal}}/parse?debug=1
+POST http://{{ngx-portal}}/parse
 Content-Type: application/json
 
 {
   "data": {
     "trend_definition": {
       "trend_mode": "SNAPSHOT",
-      "bucketing_attributes": [
-        "airwatch.device._device_platform"
-      ],
       "counter_definitions": [
         {
           "aggregate_attribute": "airwatch.device._airwatch_device_guid",
@@ -43,7 +40,6 @@ Content-Type: application/json
         "operand_collection_present": false
       },
       "all_report_column_attributes": [
-        "airwatch.device._device_platform",
         "airwatch.device._airwatch_device_guid"
       ],
       "filter_condition_nested_rules": {
@@ -70,18 +66,9 @@ Content-Type: application/json
     "trend_results": [
       {
         "start_millis": 0,
-        "end_millis": 1700635596503,
+        "end_millis": 1700635478186,
         "date_attribute_name": "airwatch.device.adp_modified_at",
-        "bucketing_attributes": [
-          {
-            "column_basic_view": {
-              "name": "airwatch.device._device_platform",
-              "label": "Platform",
-              "data_type": "STRING"
-            },
-            "value": "Apple iOS"
-          }
-        ],
+        "bucketing_attributes": [],
         "counters": [
           {
             "definition": {
@@ -94,193 +81,7 @@ Content-Type: application/json
                 "label": "Workspace ONE UEM Device GUID",
                 "data_type": "STRING"
               },
-              "value": 41748
-            }
-          }
-        ]
-      },
-      {
-        "start_millis": 0,
-        "end_millis": 1700635596503,
-        "date_attribute_name": "airwatch.device.adp_modified_at",
-        "bucketing_attributes": [
-          {
-            "column_basic_view": {
-              "name": "airwatch.device._device_platform",
-              "label": "Platform",
-              "data_type": "STRING"
-            },
-            "value": "Windows Desktop"
-          }
-        ],
-        "counters": [
-          {
-            "definition": {
-              "aggregate_attribute": "airwatch.device._airwatch_device_guid",
-              "aggregation_function": "COUNT"
-            },
-            "result": {
-              "column_basic_view": {
-                "name": "airwatch.device._airwatch_device_guid",
-                "label": "Workspace ONE UEM Device GUID",
-                "data_type": "STRING"
-              },
-              "value": 29278
-            }
-          }
-        ]
-      },
-      {
-        "start_millis": 0,
-        "end_millis": 1700635596503,
-        "date_attribute_name": "airwatch.device.adp_modified_at",
-        "bucketing_attributes": [
-          {
-            "column_basic_view": {
-              "name": "airwatch.device._device_platform",
-              "label": "Platform",
-              "data_type": "STRING"
-            },
-            "value": "Apple macOS"
-          }
-        ],
-        "counters": [
-          {
-            "definition": {
-              "aggregate_attribute": "airwatch.device._airwatch_device_guid",
-              "aggregation_function": "COUNT"
-            },
-            "result": {
-              "column_basic_view": {
-                "name": "airwatch.device._airwatch_device_guid",
-                "label": "Workspace ONE UEM Device GUID",
-                "data_type": "STRING"
-              },
-              "value": 28481
-            }
-          }
-        ]
-      },
-      {
-        "start_millis": 0,
-        "end_millis": 1700635596503,
-        "date_attribute_name": "airwatch.device.adp_modified_at",
-        "bucketing_attributes": [
-          {
-            "column_basic_view": {
-              "name": "airwatch.device._device_platform",
-              "label": "Platform",
-              "data_type": "STRING"
-            },
-            "value": "Android"
-          }
-        ],
-        "counters": [
-          {
-            "definition": {
-              "aggregate_attribute": "airwatch.device._airwatch_device_guid",
-              "aggregation_function": "COUNT"
-            },
-            "result": {
-              "column_basic_view": {
-                "name": "airwatch.device._airwatch_device_guid",
-                "label": "Workspace ONE UEM Device GUID",
-                "data_type": "STRING"
-              },
-              "value": 22596
-            }
-          }
-        ]
-      },
-      {
-        "start_millis": 0,
-        "end_millis": 1700635596503,
-        "date_attribute_name": "airwatch.device.adp_modified_at",
-        "bucketing_attributes": [
-          {
-            "column_basic_view": {
-              "name": "airwatch.device._device_platform",
-              "label": "Platform",
-              "data_type": "STRING"
-            },
-            "value": "Windows 7"
-          }
-        ],
-        "counters": [
-          {
-            "definition": {
-              "aggregate_attribute": "airwatch.device._airwatch_device_guid",
-              "aggregation_function": "COUNT"
-            },
-            "result": {
-              "column_basic_view": {
-                "name": "airwatch.device._airwatch_device_guid",
-                "label": "Workspace ONE UEM Device GUID",
-                "data_type": "STRING"
-              },
-              "value": 34
-            }
-          }
-        ]
-      },
-      {
-        "start_millis": 0,
-        "end_millis": 1700635596503,
-        "date_attribute_name": "airwatch.device.adp_modified_at",
-        "bucketing_attributes": [
-          {
-            "column_basic_view": {
-              "name": "airwatch.device._device_platform",
-              "label": "Platform",
-              "data_type": "STRING"
-            },
-            "value": "Chrome OS"
-          }
-        ],
-        "counters": [
-          {
-            "definition": {
-              "aggregate_attribute": "airwatch.device._airwatch_device_guid",
-              "aggregation_function": "COUNT"
-            },
-            "result": {
-              "column_basic_view": {
-                "name": "airwatch.device._airwatch_device_guid",
-                "label": "Workspace ONE UEM Device GUID",
-                "data_type": "STRING"
-              },
-              "value": 4
-            }
-          }
-        ]
-      },
-      {
-        "start_millis": 0,
-        "end_millis": 1700635596503,
-        "date_attribute_name": "airwatch.device.adp_modified_at",
-        "bucketing_attributes": [
-          {
-            "column_basic_view": {
-              "name": "airwatch.device._device_platform",
-              "label": "Platform",
-              "data_type": "STRING"
-            },
-            "value": "Apple tvOS"
-          }
-        ],
-        "counters": [
-          {
-            "definition": {
-              "aggregate_attribute": "airwatch.device._airwatch_device_guid",
-              "aggregation_function": "COUNT"
-            },
-            "result": {
-              "column_basic_view": {
-                "name": "airwatch.device._airwatch_device_guid",
-                "label": "Workspace ONE UEM Device GUID",
-                "data_type": "STRING"
-              },
-              "value": 2
+              "value": 122147
             }
           }
         ]
@@ -290,8 +91,8 @@ Content-Type: application/json
 }
 
 ### response with one group by
-POST http://{{ngx-portal}}/parse?debug=1
-#POST http://{{ngx-portal}}/parse
+POST http://{{ngx-portal}}/parse
+#POST http://{{ngx-portal}}/parse?debug=1
 Content-Type: application/json
 
 {
@@ -579,8 +380,8 @@ Content-Type: application/json
 }
 
 ### response with two group by
-#POST http://{{ngx-portal}}/parse
-POST http://{{ngx-portal}}/parse?debug=1
+POST http://{{ngx-portal}}/parse
+#POST http://{{ngx-portal}}/parse?debug=1
 Content-Type: application/json
 
 {
