@@ -5,7 +5,7 @@
   },
   "chartParam": {
     "type": "{{type}}",
-    "externalCSS": "",
+    "externalCSS": "* { font-size:16px!important; }",
     "ngxOptions": {
       "xAxis": true,
       "yAxis": true,
