@@ -1,6 +1,6 @@
 {
   "chartParam": {
-    "type": "PieGridComponent",
+    "type": "{{type}}",
     "externalCSS": "",
     "ngxOptions": {
       "results": {
