@@ -7,3 +7,6 @@
 [submodule "ngx-portal"]
 	path = ngx-portal
 	url = https://github.com/james-curtis/ngx-portal.git
+[submodule "ngx-portal-nest"]
+	path = ngx-portal-nest
+	url = https://github.com/james-curtis/ngx-portal-nest.git

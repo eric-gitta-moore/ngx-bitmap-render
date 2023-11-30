@@ -65,7 +65,7 @@ Content-Type: application/json
 < ./data/BarVerticalNormalizedComponent.json
 
 
-#### e.g. BarVerticalStackedComponent >> bug
+#### e.g. BarVerticalStackedComponent
 POST http://{{ngx-portal}}/portal
 Content-Type: application/json
 

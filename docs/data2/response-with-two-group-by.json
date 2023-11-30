@@ -1,5 +1,11 @@
 {
-  "seriesType": "MultiSeries",
+  "translator": {
+    "name": "$..bucketing_attributes[0]..value",
+    "series": {
+      "name": "$..bucketing_attributes[1]..value",
+      "value": "$..counters..result.value"
+    }
+  },
   "chartParam": {
     "type": "{{type}}",
     "externalCSS": "",
@@ -3661,8 +3667,8 @@
         }
       },
       "view": [
-        700,
-        300
+        1000,
+        700
       ]
     }
   }
