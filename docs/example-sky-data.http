@@ -3,8 +3,8 @@
     request.variables.set('type', 'PieChartComponent')
     // request.variables.set('type', 'BarVerticalComponent')
 %}
-#POST http://{{ngx-portal}}/parse
-POST http://{{ngx-portal}}/parse?debug=1
+POST http://{{ngx-portal}}/parse
+#POST http://{{ngx-portal}}/parse?debug=1
 Content-Type: application/json
 
 < ./data2/response-without-group-by.json
@@ -24,10 +24,10 @@ Content-Type: application/json
 
 ### response with two group by
 < {%
-    request.variables.set('type', 'BarVertical2DComponent')
+    request.variables.set('type', 'BarVerticalStackedComponent')
 %}
-POST http://{{ngx-portal}}/parse?debug=1
-#POST http://{{ngx-portal}}/parse
+#POST http://{{ngx-portal}}/parse?debug=1
+POST http://{{ngx-portal}}/parse
 Content-Type: application/json
 
 < ./data2/response-with-two-group-by.json

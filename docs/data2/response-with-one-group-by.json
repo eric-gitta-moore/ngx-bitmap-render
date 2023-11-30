@@ -1,8 +1,17 @@
 {
+  "translator": {
+    "name": "$..bucketing_attributes..value",
+    "value": "$..counters..result.value"
+  },
   "chartParam": {
     "type": "{{type}}",
     "externalCSS": "",
     "ngxOptions": {
+      "xAxis": true,
+      "yAxis": true,
+      "showGridLines": true,
+      "legend": true,
+      "labels": true,
       "results": {
         "data": {
           "trend_definition": {
