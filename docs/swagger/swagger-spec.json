@@ -1,0 +1,909 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/portal": {
+      "post": {
+        "operationId": "PortalController_getChart",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChartParamInputDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/parse": {
+      "post": {
+        "operationId": "PortalController_parse",
+        "parameters": [
+          {
+            "name": "debug",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "enum": [
+                "true",
+                "false"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParseInputDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/health/live": {
+      "get": {
+        "operationId": "HealthController_live",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "if alive"
+          }
+        },
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "operationId": "HealthController_ready",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "if ready"
+          }
+        },
+        "tags": [
+          "health"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "ngx-portal-nest",
+    "description": "",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "DataItemDto": {
+        "type": "object",
+        "properties": {
+          "extra": {
+            "type": "object"
+          },
+          "label": {
+            "type": "string"
+          },
+          "max": {
+            "type": "number"
+          },
+          "min": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "extra",
+          "label"
+        ]
+      },
+      "SeriesDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "series": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataItemDto"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "series"
+        ]
+      },
+      "NgxOptionDto": {
+        "type": "object",
+        "properties": {
+          "labels": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "是否显示标签"
+          },
+          "legend": {
+            "type": "boolean",
+            "default": true,
+            "example": true,
+            "description": "是否显示图例"
+          },
+          "showGridLines": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "显示网格线"
+          },
+          "showXAxisLabel": {
+            "type": "boolean",
+            "default": false,
+            "example": false
+          },
+          "showYAxisLabel": {
+            "type": "boolean",
+            "default": false,
+            "example": false
+          },
+          "view": {
+            "type": "array",
+            "example": [
+              1400,
+              800
+            ],
+            "default": [
+              700,
+              300
+            ],
+            "items": {
+              "type": "number"
+            },
+            "description": "图表大小（[宽，高]）"
+          },
+          "xAxis": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "是否显示 x 轴"
+          },
+          "xAxisLabel": {
+            "type": "string",
+            "example": "test xAxisLabel"
+          },
+          "yAxis": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "是否显示 y 轴"
+          },
+          "yAxisLabel": {
+            "type": "string",
+            "example": "test yAxisLabel"
+          },
+          "results": {
+            "example": [
+              {
+                "name": "Germany",
+                "series": [
+                  {
+                    "name": "2010",
+                    "value": 40632,
+                    "extra": {
+                      "code": "de"
+                    }
+                  },
+                  {
+                    "name": "2000",
+                    "value": 36953,
+                    "extra": {
+                      "code": "de"
+                    }
+                  },
+                  {
+                    "name": "1990",
+                    "value": 31476,
+                    "extra": {
+                      "code": "de"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "United States",
+                "series": [
+                  {
+                    "name": "2010",
+                    "value": 0,
+                    "extra": {
+                      "code": "us"
+                    }
+                  },
+                  {
+                    "name": "2000",
+                    "value": 45986,
+                    "extra": {
+                      "code": "us"
+                    }
+                  },
+                  {
+                    "name": "1990",
+                    "value": 37060,
+                    "extra": {
+                      "code": "us"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "France",
+                "series": [
+                  {
+                    "name": "2010",
+                    "value": 36745,
+                    "extra": {
+                      "code": "fr"
+                    }
+                  },
+                  {
+                    "name": "2000",
+                    "value": 34774,
+                    "extra": {
+                      "code": "fr"
+                    }
+                  },
+                  {
+                    "name": "1990",
+                    "value": 29476,
+                    "extra": {
+                      "code": "fr"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "United Kingdom",
+                "series": [
+                  {
+                    "name": "2010",
+                    "value": 36240,
+                    "extra": {
+                      "code": "uk"
+                    }
+                  },
+                  {
+                    "name": "2000",
+                    "value": 32543,
+                    "extra": {
+                      "code": "uk"
+                    }
+                  },
+                  {
+                    "name": "1990",
+                    "value": 26424,
+                    "extra": {
+                      "code": "uk"
+                    }
+                  }
+                ]
+              }
+            ],
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DataItemDto"
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SeriesDto"
+                }
+              }
+            ],
+            "description": "图表数据"
+          }
+        },
+        "required": [
+          "results"
+        ]
+      },
+      "ChartParamInputDto": {
+        "type": "object",
+        "properties": {
+          "externalCSS": {
+            "type": "string",
+            "example": "",
+            "default": "",
+            "description": "额外 CSS，附加到 body 标签前"
+          },
+          "ngxOptions": {
+            "description": "ngx-charts 组件参数",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NgxOptionDto"
+              }
+            ]
+          },
+          "type": {
+            "type": "string",
+            "example": "BarVerticalStackedComponent",
+            "default": "BarVerticalComponent",
+            "enum": [
+              "AdvancedPieChartComponent",
+              "AreaChartComponent",
+              "AreaChartNormalizedComponent",
+              "AreaChartStackedComponent",
+              "BarHorizontalComponent",
+              "BarHorizontalNormalizedComponent",
+              "BarHorizontalStackedComponent",
+              "BarVerticalComponent",
+              "BarVertical2DComponent",
+              "BarVerticalNormalizedComponent",
+              "BarVerticalStackedComponent",
+              "BoxChartComponent",
+              "BubbleChartComponent",
+              "GaugeComponent",
+              "HeatMapComponent",
+              "LineChartComponent",
+              "NumberCardComponent",
+              "PieChartComponent",
+              "PieGridComponent",
+              "PolarChartComponent",
+              "TreeMapComponent"
+            ],
+            "description": "图表类型（ngx-charts 组件名）"
+          }
+        },
+        "required": [
+          "ngxOptions",
+          "type"
+        ]
+      },
+      "SingleSeriesDefineDto": {
+        "type": "object",
+        "properties": {
+          "extra": {
+            "type": "string",
+            "description": "JSONPATH"
+          },
+          "label": {
+            "type": "string",
+            "description": "JSONPATH"
+          },
+          "max": {
+            "type": "string",
+            "description": "JSONPATH"
+          },
+          "min": {
+            "type": "string",
+            "description": "JSONPATH"
+          },
+          "name": {
+            "type": "string",
+            "description": "JSONPATH"
+          },
+          "value": {
+            "type": "string",
+            "description": "JSONPATH"
+          }
+        },
+        "required": [
+          "name",
+          "value"
+        ]
+      },
+      "MultiSeriesDefineDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "JSONPATH"
+          },
+          "series": {
+            "description": "JSONPATH",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SingleSeriesDefineDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "series"
+        ]
+      },
+      "AnyNgxOptionDto": {
+        "type": "object",
+        "properties": {
+          "labels": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "是否显示标签"
+          },
+          "legend": {
+            "type": "boolean",
+            "default": true,
+            "example": true,
+            "description": "是否显示图例"
+          },
+          "showGridLines": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "显示网格线"
+          },
+          "showXAxisLabel": {
+            "type": "boolean",
+            "default": false,
+            "example": false
+          },
+          "showYAxisLabel": {
+            "type": "boolean",
+            "default": false,
+            "example": false
+          },
+          "view": {
+            "type": "array",
+            "example": [
+              1400,
+              800
+            ],
+            "default": [
+              700,
+              300
+            ],
+            "items": {
+              "type": "number"
+            },
+            "description": "图表大小（[宽，高]）"
+          },
+          "xAxis": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "是否显示 x 轴"
+          },
+          "xAxisLabel": {
+            "type": "string",
+            "example": "test xAxisLabel"
+          },
+          "yAxis": {
+            "type": "boolean",
+            "default": false,
+            "example": true,
+            "description": "是否显示 y 轴"
+          },
+          "yAxisLabel": {
+            "type": "string",
+            "example": "test yAxisLabel"
+          },
+          "results": {
+            "type": "object",
+            "example": {
+              "data": {
+                "trend_definition": {
+                  "trend_mode": "SNAPSHOT",
+                  "bucketing_attributes": [
+                    "airwatch.device._device_platform"
+                  ],
+                  "counter_definitions": [
+                    {
+                      "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                      "aggregation_function": "COUNT"
+                    }
+                  ],
+                  "filter": "airwatch.device.device_enrollment_status = 'Enrolled'",
+                  "entities_by_integration": {
+                    "airwatch": [
+                      "device"
+                    ]
+                  },
+                  "cardinality": 30,
+                  "accumulate": false,
+                  "ignore_case": true,
+                  "filter_condition": {
+                    "parenthesized": false,
+                    "nested_attribute": false,
+                    "custom_attribute": false,
+                    "attribute": "airwatch.device.device_enrollment_status",
+                    "operator": "=",
+                    "operands": [
+                      {
+                        "operand_type": "BasicOperand",
+                        "data_type": "STRING",
+                        "value": "Enrolled"
+                      }
+                    ],
+                    "operand_collection_present": false
+                  },
+                  "all_report_column_attributes": [
+                    "airwatch.device._device_platform",
+                    "airwatch.device._airwatch_device_guid"
+                  ],
+                  "filter_condition_nested_rules": {
+                    "type": "RuleSet",
+                    "rules": [
+                      {
+                        "type": "Rule",
+                        "nested_attribute": false,
+                        "custom_attribute": false,
+                        "attribute": "airwatch.device.device_enrollment_status",
+                        "operator": "=",
+                        "operands": [
+                          {
+                            "operand_type": "BasicOperand",
+                            "data_type": "STRING",
+                            "value": "Enrolled"
+                          }
+                        ],
+                        "operand_collection_present": false
+                      }
+                    ]
+                  }
+                },
+                "trend_results": [
+                  {
+                    "start_millis": 0,
+                    "end_millis": 1700635596503,
+                    "date_attribute_name": "airwatch.device.adp_modified_at",
+                    "bucketing_attributes": [
+                      {
+                        "column_basic_view": {
+                          "name": "airwatch.device._device_platform",
+                          "label": "Platform",
+                          "data_type": "STRING"
+                        },
+                        "value": "Apple iOS"
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "definition": {
+                          "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                          "aggregation_function": "COUNT"
+                        },
+                        "result": {
+                          "column_basic_view": {
+                            "name": "airwatch.device._airwatch_device_guid",
+                            "label": "Workspace ONE UEM Device GUID",
+                            "data_type": "STRING"
+                          },
+                          "value": 41748
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "start_millis": 0,
+                    "end_millis": 1700635596503,
+                    "date_attribute_name": "airwatch.device.adp_modified_at",
+                    "bucketing_attributes": [
+                      {
+                        "column_basic_view": {
+                          "name": "airwatch.device._device_platform",
+                          "label": "Platform",
+                          "data_type": "STRING"
+                        },
+                        "value": "Windows Desktop"
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "definition": {
+                          "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                          "aggregation_function": "COUNT"
+                        },
+                        "result": {
+                          "column_basic_view": {
+                            "name": "airwatch.device._airwatch_device_guid",
+                            "label": "Workspace ONE UEM Device GUID",
+                            "data_type": "STRING"
+                          },
+                          "value": 29278
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "start_millis": 0,
+                    "end_millis": 1700635596503,
+                    "date_attribute_name": "airwatch.device.adp_modified_at",
+                    "bucketing_attributes": [
+                      {
+                        "column_basic_view": {
+                          "name": "airwatch.device._device_platform",
+                          "label": "Platform",
+                          "data_type": "STRING"
+                        },
+                        "value": "Apple macOS"
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "definition": {
+                          "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                          "aggregation_function": "COUNT"
+                        },
+                        "result": {
+                          "column_basic_view": {
+                            "name": "airwatch.device._airwatch_device_guid",
+                            "label": "Workspace ONE UEM Device GUID",
+                            "data_type": "STRING"
+                          },
+                          "value": 28481
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "start_millis": 0,
+                    "end_millis": 1700635596503,
+                    "date_attribute_name": "airwatch.device.adp_modified_at",
+                    "bucketing_attributes": [
+                      {
+                        "column_basic_view": {
+                          "name": "airwatch.device._device_platform",
+                          "label": "Platform",
+                          "data_type": "STRING"
+                        },
+                        "value": "Android"
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "definition": {
+                          "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                          "aggregation_function": "COUNT"
+                        },
+                        "result": {
+                          "column_basic_view": {
+                            "name": "airwatch.device._airwatch_device_guid",
+                            "label": "Workspace ONE UEM Device GUID",
+                            "data_type": "STRING"
+                          },
+                          "value": 22596
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "start_millis": 0,
+                    "end_millis": 1700635596503,
+                    "date_attribute_name": "airwatch.device.adp_modified_at",
+                    "bucketing_attributes": [
+                      {
+                        "column_basic_view": {
+                          "name": "airwatch.device._device_platform",
+                          "label": "Platform",
+                          "data_type": "STRING"
+                        },
+                        "value": "Windows 7"
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "definition": {
+                          "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                          "aggregation_function": "COUNT"
+                        },
+                        "result": {
+                          "column_basic_view": {
+                            "name": "airwatch.device._airwatch_device_guid",
+                            "label": "Workspace ONE UEM Device GUID",
+                            "data_type": "STRING"
+                          },
+                          "value": 34
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "start_millis": 0,
+                    "end_millis": 1700635596503,
+                    "date_attribute_name": "airwatch.device.adp_modified_at",
+                    "bucketing_attributes": [
+                      {
+                        "column_basic_view": {
+                          "name": "airwatch.device._device_platform",
+                          "label": "Platform",
+                          "data_type": "STRING"
+                        },
+                        "value": "Chrome OS"
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "definition": {
+                          "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                          "aggregation_function": "COUNT"
+                        },
+                        "result": {
+                          "column_basic_view": {
+                            "name": "airwatch.device._airwatch_device_guid",
+                            "label": "Workspace ONE UEM Device GUID",
+                            "data_type": "STRING"
+                          },
+                          "value": 4
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "start_millis": 0,
+                    "end_millis": 1700635596503,
+                    "date_attribute_name": "airwatch.device.adp_modified_at",
+                    "bucketing_attributes": [
+                      {
+                        "column_basic_view": {
+                          "name": "airwatch.device._device_platform",
+                          "label": "Platform",
+                          "data_type": "STRING"
+                        },
+                        "value": "Apple tvOS"
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "definition": {
+                          "aggregate_attribute": "airwatch.device._airwatch_device_guid",
+                          "aggregation_function": "COUNT"
+                        },
+                        "result": {
+                          "column_basic_view": {
+                            "name": "airwatch.device._airwatch_device_guid",
+                            "label": "Workspace ONE UEM Device GUID",
+                            "data_type": "STRING"
+                          },
+                          "value": 2
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "description": "图表数据"
+          }
+        },
+        "required": [
+          "results"
+        ]
+      },
+      "AnyChartParamDto": {
+        "type": "object",
+        "properties": {
+          "externalCSS": {
+            "type": "string",
+            "example": "",
+            "default": "",
+            "description": "额外 CSS，附加到 body 标签前"
+          },
+          "ngxOptions": {
+            "description": "ngx-charts 组件参数",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AnyNgxOptionDto"
+              }
+            ]
+          },
+          "type": {
+            "type": "string",
+            "example": "BarVerticalComponent",
+            "default": "BarVerticalComponent",
+            "enum": [
+              "AdvancedPieChartComponent",
+              "AreaChartComponent",
+              "AreaChartNormalizedComponent",
+              "AreaChartStackedComponent",
+              "BarHorizontalComponent",
+              "BarHorizontalNormalizedComponent",
+              "BarHorizontalStackedComponent",
+              "BarVerticalComponent",
+              "BarVertical2DComponent",
+              "BarVerticalNormalizedComponent",
+              "BarVerticalStackedComponent",
+              "BoxChartComponent",
+              "BubbleChartComponent",
+              "GaugeComponent",
+              "HeatMapComponent",
+              "LineChartComponent",
+              "NumberCardComponent",
+              "PieChartComponent",
+              "PieGridComponent",
+              "PolarChartComponent",
+              "TreeMapComponent"
+            ],
+            "description": "图表类型（ngx-charts 组件名）"
+          }
+        },
+        "required": [
+          "ngxOptions",
+          "type"
+        ]
+      },
+      "ParseInputDto": {
+        "type": "object",
+        "properties": {
+          "chartParam": {
+            "description": "图表参数",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AnyChartParamDto"
+              }
+            ]
+          },
+          "seriesType": {
+            "type": "string",
+            "default": null,
+            "nullable": true,
+            "example": null,
+            "enum": [
+              "SingleSeries",
+              "MultiSeries",
+              "BubbleChartMultiSeries",
+              "BoxChartMultiSeries",
+              "TreeMapData",
+              "SankeyData"
+            ],
+            "description": "数据 series 类型（默认根据 chartParam.type 自动设置）"
+          },
+          "translator": {
+            "nullable": true,
+            "example": {
+              "name": "$..bucketing_attributes..value",
+              "value": "$..counters..result.value"
+            },
+            "description": "jsonpath 对应关系",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/SingleSeriesDefineDto"
+              },
+              {
+                "$ref": "#/components/schemas/MultiSeriesDefineDto"
+              }
+            ]
+          },
+          "translatorFn": {
+            "type": "string",
+            "default": null,
+            "example": null,
+            "nullable": true,
+            "description": "转换函数（js 字符串）"
+          }
+        },
+        "required": [
+          "chartParam"
+        ]
+      }
+    }
+  }
+}
